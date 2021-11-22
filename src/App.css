@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #333;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    width: 352px;
+    height: 198px;
+    margin: 0 auto;
+    outline: 1px solid #fff;
+    transform: scale(3) translateY(50%);
+    background-color: black;
+}
+
+.game-container canvas {
+    image-rendering: pixelated;
+}
+
+.SceneTransition {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    opacity: 0;
+    animation: scene-transition-fade-in .4s forwards;
+}
+
+.SceneTransition.fade-out {
+    animation: scene-transition-fade-out .4s forwards;
+}
+
+@keyframes scene-transition-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scene-transition-fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
